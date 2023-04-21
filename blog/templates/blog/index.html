@@ -28,7 +28,7 @@
             <div class="my-3">
                 <p class="text-muted">{{ object.content | truncatewords_html:50 | safe }}</p>
             </div>
-            <a href="#">Read more</a>
+            <a href="{% url 'detail_article' object.id %}">Read more</a>
         </div>
     </div>
     {% endfor %}
@@ -40,6 +40,9 @@
                     <li class="page-item">
                         <a class="page-link" href="?page=1">&laquo; First</a>
                     </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous  </a>
+                    </li>
                 {% endif %}
 
                 <li class="page-item">
@@ -49,9 +52,10 @@
 
                 {% if page_obj.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{
-                            page_obj
-                        }}">&laquo; First</a>
+                        <a class="page-link" href="?page={{page_obj.next_page_number}}">Next  </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{page_obj.paginator.num_pages}}"> Last &raquo;</a>
                     </li>
                 {% endif %}
 
