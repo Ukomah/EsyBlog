@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views import View
@@ -11,7 +8,7 @@ from .forms import UserRegistrationForm
 class RegisterView(View):
     def get(self, request):
         form = UserRegistrationForm()
-        return render(request, 'users/register.html', {
+        return render(request, 'account/register.html', {
             'form': form
             })
     
