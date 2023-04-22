@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+
+{% block title%}Delete Post{% endblock title%}
+
+
+{% block content%}
+    <!-- <button id="goBackBtn">Cancel</button> -->
+    <div class="row">
+        <div class="col-md-4 col-11 mx-md-5 mx-2 mt-md-3 my-3">
+            <a href="#" class="btn btn-outline-secondary" onclick="goBack()">Cancel</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-11 mx-md-auto mx-2 mt-md-0 mt-3">
+            <h3>Delete Blog Post</h3>
+            <h4>Are you sure you to delete this post?</h4>
+    
+            <form method="POST" action="">
+            {% csrf_token %}
+            <button type=''summit">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+{% endblock content %}

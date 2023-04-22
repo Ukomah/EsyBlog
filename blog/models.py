@@ -10,7 +10,7 @@ class  Article(models.Model):
     date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     featured = models.BooleanField(default=False)
-    likes = models.ManyToManyField(User, related_name='likes')
+    likes = models.ManyToManyField(User, related_name='likes', blank=True)
  
     def __str__(self):
         return f"{self.title} - {self.content[:50]}"
