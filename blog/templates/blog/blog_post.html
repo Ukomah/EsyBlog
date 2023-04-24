@@ -1,10 +1,12 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
 
 
 {% block title%}Blog Post{% endblock title%}
 
 
 {% block content%}
+
 <div class="row">
     <div class="col-md-4 col-11 mx-md-5 mx-2 mt-md-3 my-3">
         <a class="btn btn-outline-secondary" href="#" onclick="goBack()">Go back</a>
@@ -59,4 +61,81 @@
         {% endif %}
     </div>
 </div>
+<div class="row">
+    <div class="col-md-6 col-12 mx-3 mx-md-auto mt-3">
+        <h4 class="mb-4">Comments</h4>
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                <input type="text" name="comment" placeholder="Enter your comment here">
+                <input type="hidden" name="postsno">	
+                <input type="submit" value="Submit">	
+            </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-12 mx-3 mx-md-auto">
+
+        <div class="row">
+            <div class="col-md-2">
+                Image Section
+            </div>
+            <div class="col-md-10">
+                Comment Here
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-12 mx-3 mx-md-auto">
+
+        <div class="row">
+            <div class="col-md-2">
+                Image Section
+            </div>
+            <div class="col-md-10">
+                Comment Here
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-12 mx-3 mx-md-auto">
+
+        <div class="row">
+            <div class="col-md-2">
+                Image Section
+            </div>
+            <div class="col-md-10">
+                Comment Here
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-12 mx-3 mx-md-auto">
+
+        <div class="row">
+            <div class="col-md-2">
+                Image Section
+            </div>
+            <div class="col-md-10">
+                Comment Here
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
 {% endblock content %}
