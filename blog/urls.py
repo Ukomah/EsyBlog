@@ -7,5 +7,5 @@ urlpatterns = [
     path('<int:pk>/like', LikeArticle.as_view(), name='like_article'),
     path('featured/', Featured.as_view(), name='featured'),
     path('delete/<int:pk>', DeleteArticleView.as_view(), name='delete_article'),
-
+    
 ]
