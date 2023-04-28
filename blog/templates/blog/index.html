@@ -26,6 +26,7 @@
             {% endif %}
 
             <div class="my-3">
+                <img  class="img-fluid img-thumbnail" src="{{ object.image.url }}" alt="{{ object.image.alt }}">
                 <p class="text-muted">{{ object.content | truncatewords_html:50 | safe }}</p>
             </div>
             <a href="{% url 'detail_article' object.id %}">Read more</a>
